@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+{%block body%}
+
+<div class="p-8"> 
+
+<div class="py-4">
+<p class="text-3xl text-bold">Let's Decrypt!!</p>
+</div>
+
+<div class="flex flex-row justify-left">
+
+<div class="outline-dashed outline-white p-4">
+<form action="/decrypt/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="image" class="py-4 text-xl"> UPLOAD IMAGE</label>
+    <br>
+    <input type="file" id="image" name="image" accept="image/*" required><br><br>
+    <button class="btn btn-outline-light" type="submit">Submit</button>
+</form>
+</div>
+
+<div> </div>
+
+</div>
+
+</div>
+{%endblock%}

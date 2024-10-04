@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+
+{%block body%}
+
+<div class="p-8"> 
+
+<div class="py-4">
+<p class="text-3xl text-bold">Upload Image and Message</p>
+</div>
+
+<div class="flex flex-row justify-left">
+
+<div class="outline-dashed outline-white p-4">
+<form action="/encrypt/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="image">Upload Image</label>
+    <br>
+    <input type="file" id="image" name="image" accept="image/*" required><br><br>
+    
+    <label for="message">Enter Message</label>
+    <br>
+    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+    
+    <button class="btn btn-outline-light" type="submit">Submit</button>
+</form>
+</div>
+
+<div> </div>
+
+</div>
+
+</div>
+{%endblock%}
